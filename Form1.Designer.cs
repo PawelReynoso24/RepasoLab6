@@ -59,6 +59,7 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.buttonMostrar_Datos = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -313,6 +314,7 @@
             this.buttonGuardar_Datos.TabIndex = 25;
             this.buttonGuardar_Datos.Text = "Guardar Datos";
             this.buttonGuardar_Datos.UseVisualStyleBackColor = true;
+            this.buttonGuardar_Datos.Click += new System.EventHandler(this.buttonGuardar_Datos_Click);
             // 
             // dataGridView1
             // 
@@ -342,7 +344,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(626, 499);
+            this.label15.Location = new System.Drawing.Point(626, 508);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(228, 24);
@@ -358,12 +360,25 @@
             this.buttonMostrar_Datos.TabIndex = 30;
             this.buttonMostrar_Datos.Text = "Mostrar Datos";
             this.buttonMostrar_Datos.UseVisualStyleBackColor = true;
+            this.buttonMostrar_Datos.Click += new System.EventHandler(this.buttonMostrar_Datos_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(357, 508);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(209, 24);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Datos de los clientes:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 812);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.buttonMostrar_Datos);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.dataGridView3);
@@ -440,6 +455,7 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button buttonMostrar_Datos;
+        private System.Windows.Forms.Label label16;
     }
 }
 
