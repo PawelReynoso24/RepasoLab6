@@ -28,6 +28,10 @@ namespace RepasoLab6
             cliente.NIT = textBoxNIT.Text;
             cliente.Dirección = textBoxDireccion.Text;
             clientes.Add(cliente);
+
+            textBoxDireccion.Text = "";
+            textBoxNIT.Text = "";
+            textBoxNombre.Text = "";
         }
 
         private void buttonMostrar_Datos_Click(object sender, EventArgs e)
