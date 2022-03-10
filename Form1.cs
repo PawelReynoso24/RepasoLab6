@@ -27,11 +27,20 @@ namespace RepasoLab6
             cliente.Nombre = textBoxNombre.Text;
             cliente.NIT = textBoxNIT.Text;
             cliente.Dirección = textBoxDireccion.Text;
+            clientes.Add(cliente);
         }
 
         private void buttonMostrar_Datos_Click(object sender, EventArgs e)
         {
+            Mostrar_GridView();
+        }
 
+        private void Mostrar_GridView()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = clientes;
+            dataGridView1.Refresh();
         }
     }
 }
