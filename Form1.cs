@@ -66,7 +66,7 @@ namespace RepasoLab6
 
             dataGridView2.DataSource = null;
             dataGridView2.Refresh();
-            dataGridView2.DataSource = clientes;
+            dataGridView2.DataSource = autos;
             dataGridView2.Refresh();
         }
     }
