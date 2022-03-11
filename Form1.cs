@@ -33,34 +33,42 @@ namespace RepasoLab6
             cliente.Nombre = textBoxNombre.Text;
             cliente.NIT = textBoxNIT.Text;
             cliente.Dirección = textBoxDireccion.Text;
-            clientes.Add(cliente);
 
             auto.Marca = textBoxMarca.Text;
             auto.Placa = textBoxPlaca.Text;
             auto.Color = textBoxColor.Text;
             auto.Modelo = Convert.ToInt32(textBoxModelo.Text);
             auto.Precio = Convert.ToDecimal(textBoxPrecio.Text);
-            autos.Add(auto);
 
             alquiler.Recorrido = Convert.ToDecimal(textBoxRecorrido.Text);
             alquiler.Alquiler = dateTimePickerAlquiler.Value;
             alquiler.Devolución = dateTimePickerDevolución.Value;
             alquiler.Placa = textBoxPlaca.Text;
             alquiler.Nombre = textBoxNombre.Text;
-            alquileres.Add(alquiler);
+            
 
-            textBoxDireccion.Text = "";
-            textBoxNIT.Text = "";
-            textBoxNombre.Text = "";
-            textBoxColor.Text = "";
-            textBoxMarca.Text = "";
-            textBoxModelo.Text = "";
-            textBoxPlaca.Text = "";
-            textBoxPrecio.Text = "";
-            textBoxRecorrido.Text = "";
-
-            Guardar_DatosCliente("Datos de Clientes.txt");
-            Guardar_DatosAuto("Datos de Autos.txt");
+            int posicion = autos.FindIndex(x => x.Placa == textBoxPlaca.Text);
+            if (posicion == -1)
+            {
+                autos.Add(auto);
+                alquileres.Add(alquiler);
+                clientes.Add(cliente);
+                Guardar_DatosAuto("Datos de Autos.txt");
+                Guardar_DatosCliente("Datos de Clientes.txt");
+                textBoxDireccion.Text = "";
+                textBoxNIT.Text = "";
+                textBoxNombre.Text = "";
+                textBoxColor.Text = "";
+                textBoxMarca.Text = "";
+                textBoxModelo.Text = "";
+                textBoxPlaca.Text = "";
+                textBoxPrecio.Text = "";
+                textBoxRecorrido.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Ya existe el auto");
+            }
         }
 
         private void buttonMostrar_Datos_Click(object sender, EventArgs e)
