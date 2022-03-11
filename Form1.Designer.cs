@@ -50,8 +50,8 @@
             this.textBoxRecorrido = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAlquiler = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDevolución = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.buttonGuardar_Datos = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -280,19 +280,19 @@
             this.label13.TabIndex = 21;
             this.label13.Text = "Fecha de alquiler:";
             // 
-            // dateTimePicker1
+            // dateTimePickerAlquiler
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(854, 210);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 22;
+            this.dateTimePickerAlquiler.Location = new System.Drawing.Point(854, 210);
+            this.dateTimePickerAlquiler.Name = "dateTimePickerAlquiler";
+            this.dateTimePickerAlquiler.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerAlquiler.TabIndex = 22;
             // 
-            // dateTimePicker2
+            // dateTimePickerDevolución
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(854, 309);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 24;
+            this.dateTimePickerDevolución.Location = new System.Drawing.Point(854, 309);
+            this.dateTimePickerDevolución.Name = "dateTimePickerDevolución";
+            this.dateTimePickerDevolución.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePickerDevolución.TabIndex = 24;
             // 
             // label14
             // 
@@ -385,9 +385,9 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonGuardar_Datos);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePickerDevolución);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerAlquiler);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBoxRecorrido);
             this.Controls.Add(this.label12);
@@ -446,8 +446,8 @@
         private System.Windows.Forms.TextBox textBoxRecorrido;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAlquiler;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDevolución;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button buttonGuardar_Datos;
         private System.Windows.Forms.DataGridView dataGridView1;
