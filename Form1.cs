@@ -38,7 +38,7 @@ namespace RepasoLab6
             auto.Marca = textBoxMarca.Text;
             auto.Placa = textBoxPlaca.Text;
             auto.Color = textBoxColor.Text;
-            auto.Modelo = Convert.To(textBoxModelo.Text);
+            auto.Modelo = Convert.ToInt32(textBoxModelo.Text);
             auto.Precio = Convert.ToDecimal(textBoxPrecio.Text);
             autos.Add(auto);
 
