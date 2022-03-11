@@ -45,6 +45,8 @@ namespace RepasoLab6
             alquiler.Recorrido = Convert.ToDecimal(textBoxRecorrido.Text);
             alquiler.Alquiler = dateTimePickerAlquiler.Value;
             alquiler.Devolución = dateTimePickerDevolución.Value;
+            alquiler.Placa = textBoxPlaca.Text;
+            alquiler.Nombre = textBoxNombre.Text;
             alquileres.Add(alquiler);
 
             textBoxDireccion.Text = "";
@@ -63,21 +65,26 @@ namespace RepasoLab6
 
         private void buttonMostrar_Datos_Click(object sender, EventArgs e)
         {
-            //for (int i = 0; i < clientes.Count; i++)
-            //{
-            //    for (int j = 0; j < autos.Count; j++)
-            //    {
-            //        if (clientes[i].Nombre == autos[j].)
-            //        {
-            //            Pago pagos = new Pago();
-            //            pagos.Noempleado = empleados[i].Noempleado;
-            //            pagos.Nombre = empleados[i].Nombre;
-            //            pagos.SueldoMes = empleados[i].SueldoHora * asistencias[j].HorasMes;
+            for (int i = 0; i < alquileres.Count; i++)
+            {
+                for (int j = 0; j < autos.Count; j++)
+                {
+                    if (alquileres[i].Placa == autos[j].Placa)
+                    {
+                        Pago pagos = new Pago();
+                        pagos.Nombre = alquileres[i].Nombre;
+                        pagos.Placa = alquileres[i].Placa;
+                        pagos.Marca = autos[j].Marca;
+                        pagos.Modelo = autos[j].Modelo;
+                        pagos.Color = autos[j].Color;
+                        pagos.Precio = autos[j].Precio;
+                        pagos.Devolución = alquileres[i].Devolución;
+                        pagos.Total_Pagar = alquileres[i].Recorrido * autos[j].Precio;
 
-            //            sueldos.Add(sueldo);
-            //        }
-            //    }
-            //}
+                        pago.Add(pagos);
+                    }
+                }
+            }
 
             Mostrar_GridView();
         }
@@ -92,7 +99,6 @@ namespace RepasoLab6
             dataGridView2.DataSource = null;
             dataGridView2.Refresh();
             dataGridView2.DataSource = autos;
-            dataGridView2.DataSource = alquileres;
             dataGridView2.Refresh();
 
             dataGridView3.DataSource = null;

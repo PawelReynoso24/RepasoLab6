@@ -14,7 +14,7 @@ namespace RepasoLab6
         public string Modelo { get; set; }
         public string Color { get; set; }
         public decimal Precio { get; set; }
-        public decimal Recorrido { get; set; }
         public DateTime Devolución { get; set; }
+        public decimal Total_Pagar { get; set; }
     }
 }

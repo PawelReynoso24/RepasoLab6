@@ -12,5 +12,6 @@ namespace RepasoLab6
         public DateTime Devolución { get; set; }
         public string Placa { get; set; }
         public decimal Recorrido { get; set; }
+        public string Nombre { get; set; }
     }
 }
