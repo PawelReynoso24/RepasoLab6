@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace RepasoLab6
 
         List<Clientes> clientes = new List<Clientes>();
         List<Autos> autos = new List<Autos>();
+        List<Pago> pago = new List<Pago>();
 
         public Form1()
         {
@@ -50,10 +52,29 @@ namespace RepasoLab6
             textBoxPlaca.Text = "";
             textBoxPrecio.Text = "";
             textBoxRecorrido.Text = "";
+
+            Guardar_DatosCliente("Datos de Clientes.txt");
+            Guardar_DatosAuto("Datos de Autos.txt");
         }
 
         private void buttonMostrar_Datos_Click(object sender, EventArgs e)
         {
+            //for (int i = 0; i < clientes.Count; i++)
+            //{
+            //    for (int j = 0; j < autos.Count; j++)
+            //    {
+            //        if (clientes[i].Nombre == autos[j].)
+            //        {
+            //            Pago pagos = new Pago();
+            //            pagos.Noempleado = empleados[i].Noempleado;
+            //            pagos.Nombre = empleados[i].Nombre;
+            //            pagos.SueldoMes = empleados[i].SueldoHora * asistencias[j].HorasMes;
+
+            //            sueldos.Add(sueldo);
+            //        }
+            //    }
+            //}
+
             Mostrar_GridView();
         }
 
@@ -68,6 +89,43 @@ namespace RepasoLab6
             dataGridView2.Refresh();
             dataGridView2.DataSource = autos;
             dataGridView2.Refresh();
+
+            dataGridView3.DataSource = null;
+            dataGridView3.Refresh();
+            dataGridView3.DataSource = pago;
+            dataGridView3.Refresh();
+        }
+
+        private void Guardar_DatosCliente(string fileName)
+        {
+            FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            //Hay que recorrer la lista para ir guardando cada elemento de la lista            
+
+            foreach (var cl in clientes)
+            {
+                writer.WriteLine(cl.Nombre);
+                writer.WriteLine(cl.NIT);
+                writer.WriteLine(cl.Dirección);
+            }
+            writer.Close();
+        }
+
+        private void Guardar_DatosAuto(string fileName)
+        {
+            FileStream stream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(stream);
+            //Hay que recorrer la lista para ir guardando cada elemento de la lista            
+
+            foreach (var au in autos)
+            {
+                writer.WriteLine(au.Placa);
+                writer.WriteLine(au.Marca);
+                writer.WriteLine(au.Modelo);
+                writer.WriteLine(au.Color);
+                writer.WriteLine(au.Precio);
+            }
+            writer.Close();
         }
     }
 }
