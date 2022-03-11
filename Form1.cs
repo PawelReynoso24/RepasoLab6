@@ -16,6 +16,7 @@ namespace RepasoLab6
 
         List<Clientes> clientes = new List<Clientes>();
         List<Autos> autos = new List<Autos>();
+        List<Alquileres> alquileres = new List<Alquileres>();
         List<Pago> pago = new List<Pago>();
 
         public Form1()
@@ -27,6 +28,7 @@ namespace RepasoLab6
         {
             Clientes cliente = new Clientes();
             Autos auto = new Autos();
+            Alquileres alquiler = new Alquileres();
 
             cliente.Nombre = textBoxNombre.Text;
             cliente.NIT = textBoxNIT.Text;
@@ -38,10 +40,12 @@ namespace RepasoLab6
             auto.Color = textBoxColor.Text;
             auto.Modelo = textBoxModelo.Text;
             auto.Precio = Convert.ToDecimal(textBoxPrecio.Text);
-            auto.Recorrido = Convert.ToDecimal(textBoxRecorrido.Text);
-            auto.Alquiler = dateTimePickerAlquiler.Value;
-            auto.Devolución = dateTimePickerDevolución.Value;
             autos.Add(auto);
+
+            alquiler.Recorrido = Convert.ToDecimal(textBoxRecorrido.Text);
+            alquiler.Alquiler = dateTimePickerAlquiler.Value;
+            alquiler.Devolución = dateTimePickerDevolución.Value;
+            alquileres.Add(alquiler);
 
             textBoxDireccion.Text = "";
             textBoxNIT.Text = "";
@@ -88,6 +92,7 @@ namespace RepasoLab6
             dataGridView2.DataSource = null;
             dataGridView2.Refresh();
             dataGridView2.DataSource = autos;
+            dataGridView2.DataSource = alquileres;
             dataGridView2.Refresh();
 
             dataGridView3.DataSource = null;
