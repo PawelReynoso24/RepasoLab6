@@ -11,7 +11,7 @@ namespace RepasoLab6
         public string Nombre { get; set; }
         public string Placa { get; set; }
         public string Marca { get; set; }
-        public string Modelo { get; set; }
+        public int Modelo { get; set; }
         public string Color { get; set; }
         public decimal Precio { get; set; }
         public DateTime Devolución { get; set; }
